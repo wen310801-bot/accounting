@@ -3,147 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鞎∠𤌍璅躰蕭頩文膥 - �緒�嵰糍芰��</title>
+    <title>理財目標追蹤器 - 莫蘭迪版</title>
     <style>
-        ：根 {
-            /* �緒�嵰糍芾𠧧豌豆�𡁶儔 */
-            --bg-顏色：#f4f5f7； /* 瘛箇�啖�峕艶 */
+        :root {
+            /* 莫蘭迪色系定義 */
+            --bg-color: #f4f5f7; /* 淺灰背景 */
             --card-bg: #ffffff;
-            --文本主：#5c5c5c; /* 瘛梁�銜�烾�䈑�䔶�浬頭像�鍂蝝娪�� */
+            --text-main: #5c5c5c; /* 深灰字體，不使用純黑 */
             --text-light: #949494;
             
-            --主要：#7c99ac； /* �𧊅�䔿��� */
+            --primary: #7c99ac; /* 霧霾藍 */
             --primary-light: #dbe2e6;
             
-            --成功：#95b8a6； /* 啖�蝬� (�𤣰��) */
+            --success: #95b8a6; /* 灰豆綠 (收入) */
             --success-bg: #eaf2ee;
             
-            --危險：#d48c8c； /* 銋曄𤅡緒�曲 (�𣈲�枂) */
+            --danger: #d48c8c; /* 乾燥玫瑰 (支出) */
             --danger-bg: #f7e8e8;
             
-            -- 口音：#e0cda7； /* ��閖漸憟感知�� (霅血 ��/��鞹內) */
+            --accent: #e0cda7; /* 燕麥奶咖 (警告/提示) */
             --accent-bg: #f9f5ed;
             
             --border-radius: 16px;
         }
 
         * {
-            邊距：0；
-            內邊距：0；
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        身體 {
+        body {
             font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
             background-color: var(--bg-color);
-            最小高度：100vh；
-            內邊距：20px；
-            顏色：var(--text-main);
-            行高：1.6；
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-main);
+            line-height: 1.6;
         }
 
-        。容器 {
-            最大寬度：1000像素；
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
             background: var(--card-bg);
-            邊界半徑：var(--邊界半徑);
-            內邊距：40px；
-            盒子陰影：0 10px 30px rgba(0,0,0,0.05); /* 𥪜�屸苊敶� */
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 柔和陰影 */
         }
 
         h1 {
-            文字對齊方式：居中；
-            顏色：var(--primary);
+            text-align: center;
+            color: var(--primary);
             margin-bottom: 10px;
-            字體大小：2.2em；
-            字體粗細：600；
-            字母間距：1px；
+            font-size: 2.2em;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .subtitle {
-            文字對齊方式：居中；
-            顏色：var(--text-light);
+            text-align: center;
+            color: var(--text-light);
             margin-bottom: 40px;
-            字體大小：1em；
+            font-size: 1em;
         }
 
-        。部分 {
-            背景：#fafafa；
-            內邊距：30px；
-            邊界半徑：var(--邊界半徑);
+        .section {
+            background: #fafafa;
+            padding: 30px;
+            border-radius: var(--border-radius);
             margin-bottom: 30px;
             border: 1px solid #eeeeee;
         }
 
         .section-title {
-            字體大小：1.2em；
-            顏色：var(--text-main);
+            font-size: 1.2em;
+            color: var(--text-main);
             margin-bottom: 25px;
-            顯示方式：flex；
+            display: flex;
             align-items: center;
-            間隙：10px；
-            字體粗細：600；
+            gap: 10px;
+            font-weight: 600;
         }
 
         .section-title::before {
-            內容： '';
-            顯示：塊；
-            寬度：5像素；
-            高度：20像素；
+            content: '';
+            display: block;
+            width: 5px;
+            height: 20px;
             background-color: var(--primary);
-            圓角半徑：10px；
+            border-radius: 10px;
         }
 
         .form-grid {
-            顯示方式：網格；
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            間隙：20px；
+            gap: 20px;
             margin-bottom: 20px;
         }
 
         .input-group {
-            顯示方式：flex；
-            彎曲方向：柱；
+            display: flex;
+            flex-direction: column;
         }
 
-        標籤 {
-            字體粗細：500；
+        label {
+            font-weight: 500;
             margin-bottom: 8px;
-            顏色：var(--text-main);
-            字體大小：0.9em；
+            color: var(--text-main);
+            font-size: 0.9em;
         }
 
-        輸入框、選擇框、文字區域 {
-            內邊距：12px；
+        input, select, textarea {
+            padding: 12px;
             border: 1px solid #e0e0e0;
-            圓角半徑：10px；
-            字體大小：1em；
-            背景色：#fff；
-            顏色：var(--text-main);
-            過渡：全部 0.3 秒；
+            border-radius: 10px;
+            font-size: 1em;
+            background: #fff;
+            color: var(--text-main);
+            transition: all 0.3s;
         }
 
-        輸入:焦點{
-            概要：無；
-            邊框顏色：var(--primary);
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
             box-shadow: 0 0 0 3px var(--primary-light);
         }
 
         .btn {
             background: var(--primary);
-            顏色：白色；
-            邊框：無；
-            內邊距：12px 30px；
-            圓角半徑：50px；
-            遊標：指針；
-            字體大小：1em；
-            字體粗細：500；
-            過渡：全部 0.3 秒；
-            字母間距：0.5px；
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
-            不透明度：0.9；
+            opacity: 0.9;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(124, 153, 172, 0.3);
         }
@@ -157,33 +157,33 @@
 
         .btn-danger {
             background: var(--danger);
-            內邊距：6px 15px；
-            字體大小：0.85em；
+            padding: 6px 15px;
+            font-size: 0.85em;
         }
         .btn-danger:hover {
             box-shadow: 0 5px 15px rgba(212, 140, 140, 0.3);
         }
 
         .btn-small {
-            內邊距：8px 20px；
-            字體大小：0.9em；
+            padding: 8px 20px;
+            font-size: 0.9em;
         }
 
-        。儀表板 {
-            顯示方式：網格；
+        .dashboard {
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            間隙：20px；
+            gap: 20px;
             margin-bottom: 30px;
         }
 
-        。卡片 {
-            背景：白色；
-            內邊距：25px 15px；
-            邊界半徑：var(--邊界半徑);
-            文字對齊方式：居中；
+        .card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: var(--border-radius);
+            text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             border: 1px solid #f0f0f0;
-            轉換：變換 0.3 秒；
+            transition: transform 0.3s;
         }
         
         .card:hover {
@@ -191,229 +191,229 @@
         }
 
         .card-label {
-            字體大小：0.85em；
-            顏色：var(--text-light);
+            font-size: 0.85em;
+            color: var(--text-light);
             margin-bottom: 8px;
-            字母間距：1px；
+            letter-spacing: 1px;
         }
 
         .card-value {
-            字體大小：1.5em；
-            字體粗細：600；
-            顏色：var(--text-main);
+            font-size: 1.5em;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         .card.income .card-value { color: var(--success); }
         .card.expense .card-value { color: var(--danger); }
         .card.warning .card-value { color: var(--accent); }
         
-        /* �蝦暺墧�羓��㨃���見撘� */
+        /* 可點擊的卡片樣式 */
         .card.clickable {
-            遊標：指針；
-            位置：相對；
+            cursor: pointer;
+            position: relative;
         }
         .card.clickable:active {
-            變換：縮放(0.98)；
+            transform: scale(0.98);
         }
         .card.clickable::after {
-            content: '���暺墧�𦠜䰻��底底��';
-            位置：絕對定位；
-            底部：5px；
-            左側：0；
-            寬度：100%；
-            字體大小：0.7em；
-            顏色：#ddd；
-            不透明度：0；
-            過渡：不透明度 0.3 秒；
+            content: '👆 點擊查看詳情';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            font-size: 0.7em;
+            color: #ddd;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         .card.clickable:hover::after {
-            不透明度：1；
+            opacity: 1;
         }
 
         .date-display {
             background: var(--accent-bg);
-            內邊距：20px；
-            邊界半徑：var(--邊界半徑);
-            文字對齊方式：居中；
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
             margin-bottom: 30px;
-            顏色：#8c7b5d；
+            color: #8c7b5d;
         }
 
         .date-display h3 {
-            字體大小：1em；
-            字體粗細：正常；
+            font-size: 1em;
+            font-weight: normal;
             margin-bottom: 5px;
         }
 
-        .倒數計時{
-            字體大小：1.4em；
-            字體粗細：粗體；
-            顏色：#b59e72​​；
+        .countdown {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #b59e72;
         }
 
         .progress-section {
-            背景：白色；
-            內邊距：5px；
-            邊界半徑：var(--邊界半徑);
+            background: white;
+            padding: 5px;
+            border-radius: var(--border-radius);
             margin-bottom: 30px;
         }
 
         .progress-bar-container {
-            背景色：#f0f0f0；
-            高度：20像素；
-            圓角半徑：10px；
-            溢出：隱藏；
-            位置：相對；
+            background: #f0f0f0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
         }
 
         .progress-bar {
-            高度：100%；
-            背景：var（--成功）； /* �緒�嵰糍芰�� */
-            圓角半徑：10px；
+            height: 100%;
+            background: var(--success); /* 莫蘭迪綠 */
+            border-radius: 10px;
             transition: width 0.8s ease;
         }
 
         .transaction-form {
-            背景：白色；
-            內邊距：25px；
-            邊界半徑：var(--邊界半徑);
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
             margin-bottom: 25px;
             border: 1px dashed #d1d5db;
         }
 
         .radio-group {
-            顯示方式：flex；
-            間隙：20px；
+            display: flex;
+            gap: 20px;
             margin-bottom: 20px;
             justify-content: center;
         }
 
         .radio-label {
-            顯示方式：flex；
+            display: flex;
             align-items: center;
-            間隙：8像素；
-            遊標：指針；
-            內邊距：8px 20px；
-            圓角半徑：20px；
-            過渡：全部 0.2 秒；
+            gap: 8px;
+            cursor: pointer;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.2s;
             border: 1px solid transparent;
         }
         
         .radio-label:hover {
-            背景：#f5f5f5；
+            background: #f5f5f5;
         }
 
-        /* �䌊摰𡁶儔 電台 */
-        輸入[type="radio"] {
-            強調色：var(--primary);
+        /* 自定義 Radio */
+        input[type="radio"] {
+            accent-color: var(--primary);
         }
 
         .transaction-list {
-            背景：白色；
-            邊界半徑：var(--邊界半徑);
-            溢出：隱藏；
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
             box-shadow: 0 4px 20px rgba(0,0,0,0.02);
         }
 
         .transaction-header {
-            顯示方式：網格；
-            網格模板列：80px 140px 1fr 100px 70px； /* 憓𧼮�䭾���𤘪�雿滾祝摨� */
-            間隙：15px；
-            內邊距：15px 20px；
-            背景：#fafafa；
-            顏色：var(--text-light);
-            字體大小：0.85em；
+            display: grid;
+            grid-template-columns: 80px 140px 1fr 100px 70px; /* 增加時間欄位寬度 */
+            gap: 15px;
+            padding: 15px 20px;
+            background: #fafafa;
+            color: var(--text-light);
+            font-size: 0.85em;
             border-bottom: 1px solid #f0f0f0;
         }
 
         .transaction-item {
-            顯示方式：網格；
+            display: grid;
             grid-template-columns: 80px 140px 1fr 100px 70px;
-            間隙：15px；
-            內邊距：15px 20px；
+            gap: 15px;
+            padding: 15px 20px;
             border-bottom: 1px solid #f9f9f9;
             align-items: center;
-            過渡：背景 0.2 秒；
+            transition: background 0.2s;
         }
 
         .transaction-item:hover {
-            背景：#fcfcfc；
+            background: #fcfcfc;
         }
 
         .transaction-type {
-            內邊距：4px 10px；
-            圓角半徑：6px；
-            字體大小：0.8em；
-            文字對齊方式：居中；
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            text-align: center;
         }
 
-        .type-come {
-            背景：var(--success-bg);
-            顏色：#6b8c7c；
+        .type-income {
+            background: var(--success-bg);
+            color: #6b8c7c;
         }
 
         .type-expense {
             background: var(--danger-bg);
-            顏色：#b57b7b；
+            color: #b57b7b;
         }
         
         .transaction-date {
-            字體大小：0.85em；
-            顏色：var(--text-light);
-            顯示方式：flex；
-            彎曲方向：柱；
-            行高：1.2；
+            font-size: 0.85em;
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
         }
         
         .transaction-date span.time {
-            字體大小：0.9em；
-            顏色：#b0b0b0；
+            font-size: 0.9em;
+            color: #b0b0b0;
         }
 
         .transaction-reason {
-            顏色：var(--text-main);
-            字體大小：0.95em；
+            color: var(--text-main);
+            font-size: 0.95em;
         }
 
         .transaction-amount {
-            字體粗細：600；
-            文字對齊方式：右對齊；
+            font-weight: 600;
+            text-align: right;
         }
 
         .amount-income { color: var(--success); }
         .amount-expense { color: var(--danger); }
 
         .method-item {
-            顯示方式：flex；
+            display: flex;
             align-items: center;
-            justify-content: 空格;
-            內邊距：15px；
-            背景：白色；
+            justify-content: space-between;
+            padding: 15px;
+            background: white;
             margin-bottom: 10px;
-            圓角半徑：12px；
+            border-radius: 12px;
             border: 1px solid #f0f0f0;
-            過渡：全部 0.3 秒；
+            transition: all 0.3s;
         }
 
         .method-item.completed {
-            背景色：#f9f9f9；
-            不透明度：0.7；
+            background: #f9f9f9;
+            opacity: 0.7;
         }
 
         .method-item.completed .method-text {
-            text-decoration: 刪除線;
-            顏色：var(--text-light);
+            text-decoration: line-through;
+            color: var(--text-light);
         }
         
-        /* �𣳽��匧�訥矽�㟲 */
+        /* 響應式調整 */
         @media (max-width: 768px) {
             .container { padding: 20px; }
-            .transaction-header { 顯示：無； } /* ��𧢲�斃��黸��𤩺�䠷�� */
+            .transaction-header { display: none; } /* 手機版隱藏標題 */
             .transaction-item {
                 grid-template-columns: 1fr 100px;
                 grid-template-rows: auto auto auto;
-                間隙：5像素；
-                內邊距：15px；
+                gap: 5px;
+                padding: 15px;
             }
             .transaction-type { grid-column: 1; width: fit-content; margin-bottom: 5px;}
             .transaction-date { grid-column: 2; text-align: right; grid-row: 1; }
@@ -422,67 +422,67 @@
             .transaction-actions { grid-column: 2; text-align: right; }
         }
 
-        .慶祝{
-            位置：固定；
-            前50%；
-            左側：50%；
-            變換：平移(-50%, -50%)；
-            背景：白色；
-            內邊距：40px；
-            圓角半徑：20px；
+        .celebration {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            文字對齊方式：居中；
-            顯示：無；
-            z-index：1000；
+            text-align: center;
+            display: none;
+            z-index: 1000;
             border: 2px solid var(--success);
         }
 
         .overlay {
-            位置：固定；
-            頂部：0；
-            左側：0；
-            寬度：100%；
-            高度：100%；
-            背景色：rgba(255,255,255,0.8);
-            背景濾鏡：模糊(2px)；
-            顯示：無；
-            z-index：999；
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(2px);
+            display: none;
+            z-index: 999;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>��㴓��鞎∠𤌍璅躰蕭頩�</h1>
-        <p class="subtitle">�芷��𧑐閮㗛�瘥譍�蝑����暑嚗峕�乙乙𤌍璅坔�漤��</p>
+        <h1>🎯 理財目標追蹤</h1>
+        <p class="subtitle">優雅地記錄每一筆生活，朝目標前進</p>
         
         <div class="section">
-            <h2 class="section-title">���� �𤌍璅躰身摰�</h2>
+            <h2 class="section-title">📋 目標設定</h2>
             <div class="form-grid">
                 <div class="input-group">
-                    <label>�𤌍璅坔�濱迂迴</label>
-                    <input type="text" id="goalName" placeholder="靘見�嚗𡁜�埈�𣂷�𧢲���蝚砌�獢園��">
+                    <label>目標名稱</label>
+                    <input type="text" id="goalName" placeholder="例如：北歐之旅、第一桶金">
                 </div>
                 <div class="input-group">
-                    <label>�𤌍璅䠷�煾�� (NT$)</label>
+                    <label>目標金額 (NT$)</label>
                     <input type="number" id="targetAmount" placeholder="100000">
                 </div>
                 <div class="input-group">
-                    <label>�𤌍璅蹱𠯫���</label>
+                    <label>目標日期</label>
                     <input type="date" id="targetDate">
                 </div>
                 <div class="input-group">
-                    <label>瑕疵�钅�煾�� (NT$)</label>
+                    <label>起始金額 (NT$)</label>
                     <input type="number" id="initialAmount" placeholder="0" value="0">
                 </div>
             </div>
             <div style="text-align: center;">
-                <button class="btn" onclick="saveGoal()">�唇�䁅身摰�</button>
+                <button class="btn" onclick="saveGoal()">儲存設定</button>
             </div>
         </div>
 
         <div class="date-display" id="dateDisplay" style="display: none;">
-            <h3>�蝱頝𣪧�𤌍璅蹱𠯫��罰�����</h3>
-            <div class="countdown" id="countdownText">閮𦯀葉...</div>
+            <h3>⏰ 距離目標日期還有</h3>
+            <div class="countdown" id="countdownText">計算中...</div>
         </div>
 
         <div class="progress-section" id="progressSection" style="display: none;">
@@ -493,87 +493,87 @@
 
         <div class="dashboard" id="dashboard" style="display: none;">
             <div class="card">
-                <div class="card-label">�𤌍��濱蜇憿�</div>
-                <div class="card-value" id="totalAmount">新台幣 0 元</div>
+                <div class="card-label">目前總額</div>
+                <div class="card-value" id="totalAmount">NT$ 0</div>
             </div>
             <div class="card income">
-                <div class="card-label">蝝航𤣰��</div>
+                <div class="card-label">累計收入</div>
                 <div class="card-value positive" id="totalIncome">NT$ 0</div>
             </div>
-            <div class="信用卡支出">
-                <div class="card-label">蝝航𣈲�枂</div>
-                <div class="card-value negative" id="totalExpense">新台幣 0</div>
+            <div class="card expense">
+                <div class="card-label">累計支出</div>
+                <div class="card-value negative" id="totalExpense">NT$ 0</div>
             </div>
             <div class="card warning">
-                <div class="card-label">��撌Φ�煾��</div>
-                <div class="card-value" id="remainingAmount">新台幣 0 元</div>
+                <div class="card-label">還差金額</div>
+                <div class="card-value" id="remainingAmount">NT$ 0</div>
             </div>
             <div class="card">
-                <div class="card-label">瘥𤩺𠯫��摮�</div>
-                <div class="card-value" id="dailyNeed">新台幣 0</div>
+                <div class="card-label">每日需存</div>
+                <div class="card-value" id="dailyNeed">NT$ 0</div>
             </div>
-            <div class="card clickable" onclick="toggleProgressDetail()" title="暺墧�𠰴���𤤿移蜉蝣箏">
-                <div class="card-label">摰峕�鞾�唇漲</div>
+            <div class="card clickable" onclick="toggleProgressDetail()" title="點擊切換精確度">
+                <div class="card-label">完成進度</div>
                 <div class="card-value" id="progressPercent">0%</div>
             </div>
         </div>
 
         <div class="section" id="transactionSection" style="display: none;">
-            <h2 class="section-title">��兛�𤣰�𣈲閮㗛�</h2>
+            <h2 class="section-title">💰 收支記錄</h2>
             
             <div class="transaction-form">
                 <div class="radio-group">
                     <label class="radio-label">
                         <input type="radio" name="transType" value="income" checked>
-                        <span>�𤣰�� (+)</span>
+                        <span>收入 (+)</span>
                     </label>
                     <label class="radio-label">
                         <input type="radio" name="transType" value="expense">
-                        <span>�𣈲�枂(-)</span>
+                        <span>支出 (-)</span>
                     </label>
                 </div>
                 <div class="form-grid">
                     <div class="input-group">
-                        <label>新台幣 (NT$)</label>
+                        <label>金額 (NT$)</label>
                         <input type="number" id="transAmount" placeholder="1000">
                     </div>
                     <div class="input-group">
-                        <label>�👿</label>
+                        <label>日期</label>
                         <input type="date" id="transDate">
                     </div>
                     <div class="input-group">
-                        <label>������</label>
+                        <label>時間</label>
                         <input type="time" id="transTime">
                     </div>
                     <div class="input-group" style="grid-column: 1 / -1;">
-                        <label>���眏 / 隤芣��</label>
-                        <input type="text" id="transReason" placeholder="靘見�嚗期𢞁癆前鋒����𡁻�僐��鞎瑟㮾...">
+                        <label>理由 / 說明</label>
+                        <input type="text" id="transReason" placeholder="例如：薪水、晚餐、買書...">
                     </div>
                 </div>
                 <div style="text-align: right;">
-                    <button class="btn btn-success" onclick="addTransaction()">�鰵憓噼�㗛�</button>
+                    <button class="btn btn-success" onclick="addTransaction()">新增記錄</button>
                 </div>
             </div>
 
             <div class="transaction-list">
                 <div class="transaction-header">
-                    <div>憿𧼮��</div>
-                    <div>�𠯫�������</div>
-                    <div>����眏 / 隤芣��</div>
-                    <div style="text-align: right">��煾��</div>
-                    <div style="text-align: center">��瀅��</div>
+                    <div>類型</div>
+                    <div>日期時間</div>
+                    <div>理由 / 說明</div>
+                    <div style="text-align: right">金額</div>
+                    <div style="text-align: center">操作</div>
                 </div>
                 <div id="transactionList">
-                    <div style="padding: 40px; text-align: center; color: #999;">撠𡁶�∩漱��栞�㗛�</div>
+                    <div style="padding: 40px; text-align: center; color: #999;">尚無交易記錄</div>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2 class="section-title">�����𠜱��𤤿�閮�</h2>
+            <h2 class="section-title">📝 努力筆記</h2>
             <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-                <input type="text" id="newMethod" placeholder="靘見�嚗𡁏�誩予撠穃�鶯��𡟵憌脫��..." style="flex:1;">
-                <button class="btn btn-small" onclick="addMethod()">�鰵憓�</button>
+                <input type="text" id="newMethod" placeholder="例如：每天少喝一杯飲料..." style="flex:1;">
+                <button class="btn btn-small" onclick="addMethod()">新增</button>
             </div>
             <ul style="list-style: none;" id="methodList"></ul>
         </div>
@@ -581,94 +581,94 @@
 
     <div class="overlay" id="overlay" onclick="closeCelebration()"></div>
     <div class="celebration" id="celebration">
-        <div style="font-size: 3em; margin-bottom: 10px;">����</div>
-        <h2 style="color: var(--success); margin-bottom: 10px;">�剖�𣈯�娍�鞹𤌍璅轷�</h2>
-        <p style="color: var(--text-main); margin-bottom: 10px;">憒喟�������劐���𧼮𥼚</p>
+        <div style="font-size: 3em; margin-bottom: 10px;">🎉</div>
+        <h2 style="color: var(--success); margin-bottom: 10px;">恭喜達成目標！</h2>
+        <p style="color: var(--text-main); margin-bottom: 10px;">妳的堅持有了回報</p>
         <p style="color: var(--primary); font-size: 1.2em; font-weight: bold;" id="celebrationAmount"></p>
-        <button class="btn" onclick="closeCelebration()" style="margin-top: 20px;">憭芣�雴�嚗�</button>
+        <button class="btn" onclick="closeCelebration()" style="margin-top: 20px;">太棒了！</button>
     </div>
 
     <script>
         let appData = {
-            目標： {
-                姓名： ''，
+            goal: {
+                name: '',
                 targetAmount: 0,
                 targetDate: '',
-                初始金額：0
+                initialAmount: 0
             },
-            交易：[]，
-            方法： []
+            transactions: [],
+            methods: []
         };
         
-        讓 showPreciseProgress = false; // �繡���糓�炏憿舐內蠍曄Ⅱ�參��瘥�
+        let showPreciseProgress = false; // 控制是否顯示精確百分比
 
-        // ��嘥�見�𡝗𠯫�������
+        // 初始化日期時間
         document.getElementById('targetDate').valueAsDate = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000);
         
-        // 閮剖�帋�𠰴予���𠯫蠘��𣶹�銁�������
+        // 設定今天的日期與現在的時間
         const now = new Date();
         document.getElementById('transDate').valueAsDate = now;
-        document.getElementById('transTime').value = now.toTimeString().slice(0, 5); // HH:mm 格式
+        document.getElementById('transTime').value = now.toTimeString().slice(0, 5); // HH:mm format
 
         function saveGoal() {
-            const name = document.getElementById('goalName').value || '��𤑳���鞎∠𤌍璅�';
+            const name = document.getElementById('goalName').value || '我的理財目標';
             const target = parseFloat(document.getElementById('targetAmount').value) || 0;
             const initial = parseFloat(document.getElementById('initialAmount').value) || 0;
             const date = document.getElementById('targetDate').value;
 
-            如果（目標 <= 0）{
-                alert('隢貝柔性�交�㗇����𤌍璅䠷�煾�㵪�');
-                返回;
+            if (target <= 0) {
+                alert('請輸入有效的目標金額！');
+                return;
             }
 
             appData.goal = { name, targetAmount: target, targetDate: date, initialAmount: initial };
             
-            // 哄哄嘥�钅�煾��
-            如果（初始值 > 0）{
-                // 瑼X䰻�糓�炏撌修�𤘪�匧�嘥�覿漱��橒�諹𥅾�∪��鰵憓�
-                const hasInitial = appData.transactions.some(t => t.reason === '��嘥�钅�煾��');
-                如果 (!hasInitial) {
+            // 處理初始金額
+            if (initial > 0) {
+                // 檢查是否已經有初始交易，若無則新增
+                const hasInitial = appData.transactions.some(t => t.reason === '初始金額');
+                if (!hasInitial) {
                     appData.transactions.push({
                         id: Date.now(),
-                        類型：'收入'
-                        金額：初始值，
-                        日期: new Date().toISOString().split('T')[0],
-                        時間：'00:00'
-                        原因：'嘥�钅�煾�'
+                        type: 'income',
+                        amount: initial,
+                        date: new Date().toISOString().split('T')[0],
+                        time: '00:00',
+                        reason: '初始金額'
                     });
                 }
             }
 
             updateAll();
-            儲存到儲存();
+            saveToStorage();
         }
 
         function addTransaction() {
             const type = document.querySelector('input[name="transType"]:checked').value;
             const amount = parseFloat(document.getElementById('transAmount').value);
             const date = document.getElementById('transDate').value;
-            const time = document.getElementById('transTime').value; // �㬢��𡝗����
+            const time = document.getElementById('transTime').value; // 獲取時間
             const reason = document.getElementById('transReason').value.trim();
 
-            如果 (!amount || amount <= 0) {
-                alert('隢貝柔性�交�㗇���煾�㵪�');
-                返回;
+            if (!amount || amount <= 0) {
+                alert('請輸入有效金額！');
+                return;
             }
-            如果 (!reason) {
-                alert('隢貝柔性�亦��眏��𤥁牧��𠬍�');
-                返回;
+            if (!reason) {
+                alert('請輸入理由或說明！');
+                return;
             }
 
             appData.transactions.push({
                 id: Date.now(),
-                類型，
-                數量，
-                日期，
-                時間： 時間|| '00:00', // 唇�䀹���橒�諹𥅾�∪���鞱身
-                原因
+                type,
+                amount,
+                date,
+                time: time || '00:00', // 儲存時間，若無則預設
+                reason
             });
 
-            // 濱蔭大道銵典鱓�箇𣶹�銁�����
+            // 重置表單為現在時間
             document.getElementById('transAmount').value = '';
             document.getElementById('transReason').value = '';
             const currentNow = new Date();
@@ -676,55 +676,55 @@
             document.getElementById('transTime').value = currentNow.toTimeString().slice(0, 5);
 
             updateAll();
-            儲存到儲存();
+            saveToStorage();
 
             const currentTotal = calculateTotal();
-            如果 (currentTotal >= appData.goal.targetAmount && appData.goal.targetAmount > 0) {
-                顯示慶祝活動(當前總數)；
+            if (currentTotal >= appData.goal.targetAmount && appData.goal.targetAmount > 0) {
+                showCelebration(currentTotal);
             }
         }
 
         function deleteTransaction(id) {
-            if (confirm('
+            if (confirm('確定要刪除這筆記錄嗎？')) {
                 appData.transactions = appData.transactions.filter(t => t.id !== id);
                 updateAll();
-                儲存到儲存();
+                saveToStorage();
             }
         }
 
-        函數 calculateTotal() {
-            令總數 = 0；
+        function calculateTotal() {
+            let total = 0;
             appData.transactions.forEach(t => {
-                如果 (t.type === 'income') total += t.amount;
-                否則，總計 -= t.amount；
+                if (t.type === 'income') total += t.amount;
+                else total -= t.amount;
             });
-            返回總額；
+            return total;
         }
         
-        // ����偦�唇漲憿舐內璅∪��
+        // 切換進度顯示模式
         function toggleProgressDetail() {
             showPreciseProgress = !showPreciseProgress;
-            更新全部（）； // ��齒鰵皓脫�㮖�钅𢒰
+            updateAll(); // 重新渲染介面
         }
 
         function updateAll() {
-            如果 (!appData.goal.targetAmount) 回傳;
+            if (!appData.goal.targetAmount) return;
 
             const total = calculateTotal();
             const target = appData.goal.targetAmount;
             const remaining = Math.max(0, target - total);
             
-            // 閮��㛖參��瘥�
+            // 計算百分比
             const rawPercent = (total / target) * 100;
             let percentDisplay;
             
-            如果 (顯示精確進度) {
-                // 蠍曄Ⅱ璅∪�𧶏�𡁜�𤩺彍暺𧼮���拐��
+            if (showPreciseProgress) {
+                // 精確模式：小數點後兩位
                 percentDisplay = rawPercent.toFixed(2) + '%';
-            } 別的 {
-                // ∪�𧶏�𡁏㟲�彍嚗峕�憭找�灘��� 100% (�膄��䂿�毺�頞���)
+            } else {
+                // 一般模式：整數，最大不超過 100% (除非真的超過)
                 percentDisplay = Math.min(100, Math.round(rawPercent)) + '%';
-                如果 (rawPercent > 100) percentDisplay = Math.round(rawPercent) + '%';
+                if (rawPercent > 100) percentDisplay = Math.round(rawPercent) + '%';
             }
 
             const today = new Date();
@@ -733,31 +733,31 @@
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
             document.getElementById('dateDisplay').style.display = 'block';
-            const countdownText = diffDays > 0
-                ？ `${diffDays} 憭抬��${targetDate.toLocaleDateString('zh-TW')}嚗頭
-                diffDays === 0
-                    ？ '撠望糓隞𠰴予嚗�'
-                    : `撌脤�舉�� ${Math.abs(diffDays)} 憭奈;
+            const countdownText = diffDays > 0 
+                ? `${diffDays} 天（${targetDate.toLocaleDateString('zh-TW')}）`
+                : diffDays === 0 
+                    ? '就是今天！'
+                    : `已過期 ${Math.abs(diffDays)} 天`;
             document.getElementById('countdownText').textContent = countdownText;
 
             document.getElementById('dashboard').style.display = 'grid';
             document.getElementById('totalAmount').textContent = `NT$ ${total.toLocaleString()}`;
             document.getElementById('remainingAmount').textContent = `NT$ ${remaining.toLocaleString()}`;
             
-            // �凒�鰵�唇漲憿舐內
+            // 更新進度顯示
             document.getElementById('progressPercent').textContent = percentDisplay;
 
             const dailyNeed = diffDays > 0 ? Math.ceil(remaining / diffDays) : 0;
-            document.getElementById('dailyNeed').textContent = diffDays > 0 ？ `NT$ ${dailyNeed.toLocaleString()}` : '-';
+            document.getElementById('dailyNeed').textContent = diffDays > 0 ? `NT$ ${dailyNeed.toLocaleString()}` : '-';
 
             document.getElementById('progressSection').style.display = 'block';
-            // �唇漲璇桑𩑈摨蟲�𢠃�鞾�硋�𡁜銁 100% 隞亙�灘�𤑳��
+            // 進度條長度上限鎖定在 100% 以免跑版
             document.getElementById('progressBar').style.width = Math.min(100, Math.max(0, rawPercent)) + '%';
 
             let totalIncome = 0, totalExpense = 0;
             appData.transactions.forEach(t => {
-                如果 (t.type === 'income') totalIncome += t.amount;
-                否則 totalExpense += t.amount;
+                if (t.type === 'income') totalIncome += t.amount;
+                else totalExpense += t.amount;
             });
 
             document.getElementById('totalIncome').textContent = `NT$ ${totalIncome.toLocaleString()}`;
@@ -770,27 +770,27 @@
         function renderTransactions() {
             const list = document.getElementById('transactionList');
             
-            如果 (appData.transactions.length === 0) {
-                list.innerHTML = '<div style="padding: 40px; text-align: center; color: #999;">撠𡁶�∩漱櫞�㗛�</div>';
-                返回;
+            if (appData.transactions.length === 0) {
+                list.innerHTML = '<div style="padding: 40px; text-align: center; color: #999;">尚無交易記錄</div>';
+                return;
             }
 
-            // �����誯��訥摩嚗𡁏𠯫���� + ������ (�鰵�����)
+            // 排序邏輯：日期 + 時間 (新到舊)
             const sorted = [...appData.transactions].sort((a, b) => {
-                // 蝯����𠯫��蠘�����枏�𦯀葡萄牙�脰�峕�磰�
+                // 組合日期與時間字串進行比較
                 const timeA = a.time || '00:00';
                 const timeB = b.time || '00:00';
                 const dateA = new Date(`${a.date}T${timeA}`);
                 const dateB = new Date(`${b.date}T${timeB}`);
-                返回 dateB - dateA；
+                return dateB - dateA;
             });
 
             list.innerHTML = sorted.map(t => {
                 const timeStr = t.time ? `<span class="time">${t.time}</span>` : '';
-                回傳`
+                return `
                 <div class="transaction-item">
-                    <div class="transaction-type ${t.type === 'income' ? 'type-in​​come' : 'type-expense'}">
-                        ${t.type === '收入' ? '𤣰��' : '𣈲�枂'}
+                    <div class="transaction-type ${t.type === 'income' ? 'type-income' : 'type-expense'}">
+                        ${t.type === 'income' ? '收入' : '支出'}
                     </div>
                     <div class="transaction-date">
                         ${t.date}
@@ -801,7 +801,7 @@
                         ${t.type === 'income' ? '+' : '-'} ${t.amount.toLocaleString()}
                     </div>
                     <div class="transaction-actions" style="text-align: center;">
-                        <button class="btn btn-danger" onclick="deleteTransaction(${t.id})">��</button>
+                        <button class="btn btn-danger" onclick="deleteTransaction(${t.id})">×</button>
                     </div>
                 </div>
             `}).join('');
@@ -810,55 +810,55 @@
         function addMethod() {
             const input = document.getElementById('newMethod');
             const text = input.value.trim();
-            如果 (!text) 返回；
+            if (!text) return;
 
             appData.methods.push({
                 id: Date.now(),
-                文字,
-                已完成：否
+                text,
+                completed: false
             });
             input.value = '';
             renderMethods();
-            儲存到儲存();
+            saveToStorage();
         }
 
         function toggleMethod(id) {
             const method = appData.methods.find(m => m.id === id);
-            如果（方法）{
+            if (method) {
                 method.completed = !method.completed;
                 renderMethods();
-                儲存到儲存();
+                saveToStorage();
             }
         }
 
         function deleteMethod(id) {
             appData.methods = appData.methods.filter(m => m.id !== id);
             renderMethods();
-            儲存到儲存();
+            saveToStorage();
         }
 
         function renderMethods() {
             const list = document.getElementById('methodList');
-            如果 (appData.methods.length === 0) {
-                list.innerHTML = '<li style="text-align:center; color:#ccc; padding:10px;">撠𡁏𧊋�鰵憓硺遙雿閙䲮瘜�</li>';
-                返回;
+            if (appData.methods.length === 0) {
+                list.innerHTML = '<li style="text-align:center; color:#ccc; padding:10px;">尚未新增任何方法</li>';
+                return;
             }
 
             list.innerHTML = appData.methods.map(m => `
                 <li class="method-item ${m.completed ? 'completed' : ''}">
                     <label style="display:flex; align-items:center; gap:10px; cursor:pointer; flex:1;">
-                        <input type="checkbox" ${m.completed ? 'checked' : ''}
+                        <input type="checkbox" ${m.completed ? 'checked' : ''} 
                                onchange="toggleMethod(${m.id})"
                                style="width:18px; height:18px; accent-color: var(--primary);">
                         <span class="method-text">${m.text}</span>
                     </label>
-                    <button class="btn btn-danger" onclick="deleteMethod(${m.id})">�⏛�膄</button>
+                    <button class="btn btn-danger" onclick="deleteMethod(${m.id})">刪除</button>
                 </li>
             `).join('');
         }
 
         function showCelebration(amount) {
-            document.getElementById('celebrationAmount').textContent = `蝝舐�漤�煾�㵪�鐭T$ ${amount.toLocaleString()}`;
+            document.getElementById('celebrationAmount').textContent = `累積金額：NT$ ${amount.toLocaleString()}`;
             document.getElementById('overlay').style.display = 'block';
             document.getElementById('celebration').style.display = 'block';
         }
@@ -873,26 +873,26 @@
         }
 
         window.addEventListener('load', function() {
-            // ��𡑒寽霈���𡝗鰵�������
+            // 嘗試讀取新版資料
             let saved = localStorage.getItem('financeGoalPro_v2');
             
-            // 憒���𨀣�埝�㗇鰵������辷���𡑒岫霈���𤥁�羓������ (�㮾摰孤獨�閒聊�)
-            如果 (!saved) {
+            // 如果沒有新版資料，嘗試讀取舊版資料 (相容性處理)
+            if (!saved) {
                 saved = localStorage.getItem('financeGoalPro');
-                如果（已儲存）{
-                    // 憒���𨀣糓��𡃏���辷�峕�穃�穃���頧㗇�偦�𦒘�嚗䔶�銝滾⏛�諦�仿羔�藠
-                    console.log("正在遷移舊資料...");
+                if (saved) {
+                    // 如果是舊資料，我們將它轉換過來，但不刪除舊的以防萬一
+                    console.log("Migrating old data...");
                 }
             }
 
-            如果（已儲存）{
+            if (saved) {
                 appData = JSON.parse(saved);
                 document.getElementById('goalName').value = appData.goal.name;
                 document.getElementById('targetAmount').value = appData.goal.targetAmount;
                 document.getElementById('targetDate').value = appData.goal.targetDate;
                 document.getElementById('initialAmount').value = appData.goal.initialAmount;
                 
-                如果 (appData.goal.targetAmount > 0) {
+                if (appData.goal.targetAmount > 0) {
                     updateAll();
                     renderMethods();
                 }
@@ -900,10 +900,10 @@
         });
 
         document.getElementById('newMethod').addEventListener('keypress', function(e) {
-            如果 (e.key === 'Enter') addMethod();
+            if (e.key === 'Enter') addMethod();
         });
         document.getElementById('transReason').addEventListener('keypress', function(e) {
-            如果 (e.key === 'Enter') 新增交易();
+            if (e.key === 'Enter') addTransaction();
         });
     </script>
 </body>
